@@ -5,7 +5,7 @@
 flowchart TB
     subgraph Docker_Compose
         A[Apache Airflow]
-        B[MinIO (S3)]
+        B["MinIO S3"]
         C[MLflow]
         D[FastAPI API]
     end
@@ -13,9 +13,9 @@ flowchart TB
     A --> B
     A --> C
     D --> C
-    B --> E[Data Lake: Crimes Chicago]
-    C --> F[Model Registry]
-    D --> G[Client / App]
+    B --> E["Data Lake - Crimes Chicago"]
+    C --> F["Model Registry"]
+    D --> G["Client / App"]
 ```
 
 ## Ciclo de vida del modelo
