@@ -11,10 +11,10 @@ flowchart TB
     B --> E[Data Lake: Crimes Chicago]
     C --> F[Model Registry]
     D --> G[Client / App]
----
+```
 
-```mermaid
 Ciclo de vida del modelo
+```mermaid
 flowchart LR
     A[Datos en MinIO] --> B[Airflow ETL]
     B --> C[Train/Test Split]
@@ -22,10 +22,10 @@ flowchart LR
     D --> E[MLflow Tracking & Model Registry]
     E --> F[FastAPI Prediction API]
     F --> G[Predicción al usuario]
----
+```
 
-```mermaid
 Pipeline dentro de Airflow (DAG)
+```mermaid
 flowchart TD
     Start --> Ingest
     Ingest --> Preprocess
@@ -33,7 +33,8 @@ flowchart TD
     Train --> Evaluate
     Evaluate --> Register_Model
     Register_Model --> End
----
+```
+
 
 
 
