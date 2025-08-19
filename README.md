@@ -1,9 +1,9 @@
 # AP_2025_B3_TP2_Mendoza_Dante
 
-Arquitectura general del sistema
+## Arquitectura general del sistema
 ```mermaid
 flowchart TB
-    subgraph Docker Compose
+    subgraph Docker_Compose
         A[Apache Airflow] --> B[MinIO (S3)]
         A --> C[MLflow]
         D[FastAPI API] --> C
@@ -13,7 +13,7 @@ flowchart TB
     D --> G[Client / App]
 ```
 
-Ciclo de vida del modelo
+## Ciclo de vida del modelo
 ```mermaid
 flowchart LR
     A[Datos en MinIO] --> B[Airflow ETL]
@@ -24,7 +24,7 @@ flowchart LR
     F --> G[Predicción al usuario]
 ```
 
-Pipeline dentro de Airflow (DAG)
+## Pipeline dentro de Airflow (DAG)
 ```mermaid
 flowchart TD
     Start --> Ingest
