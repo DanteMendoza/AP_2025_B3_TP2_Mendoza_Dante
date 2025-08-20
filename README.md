@@ -11,36 +11,6 @@ flowchart TB
         H[Postgres DB]
     end
 
-    A --> B
-    A --> C
-    A <--> H
-    C <--> H
-    D --> C
-    B --> E["Data Lake - Crimes Chicago"]
-    C --> F["Registro de modelos"]
-    D --> G["Cliente / App"]
-
-    %% Estilos
-    style A fill:#1f77b4,stroke:#000,stroke-width:2px,color:#fff
-    style B fill:#9467bd,stroke:#000,stroke-width:2px,color:#fff
-    style C fill:#2ca02c,stroke:#000,stroke-width:2px,color:#fff
-    style D fill:#ff7f0e,stroke:#000,stroke-width:2px,color:#fff
-    style E fill:#8c564b,stroke:#000,stroke-width:2px,color:#fff
-    style F fill:#17becf,stroke:#000,stroke-width:2px,color:#fff
-    style G fill:#d62728,stroke:#000,stroke-width:2px,color:#fff
-    style H fill:#7f7f7f,stroke:#000,stroke-width:2px,color:#fff
-```
-
-```mermaid
-flowchart TB
-    subgraph Docker_Compose
-        A[Apache Airflow]
-        B["MinIO S3"]
-        C[MLflow]
-        D[FastAPI]
-        H[Postgres DB]
-    end
-
     %% Relaciones principales
     A --> E["Data Lake - Crimes Chicago"]
     A --> B
@@ -120,4 +90,3 @@ flowchart TD
     style Register_Model fill:#9467bd,stroke:#000,stroke-width:2px,color:#fff
     style End fill:#d62728,stroke:#000,stroke-width:2px,color:#fff
 ```
-
