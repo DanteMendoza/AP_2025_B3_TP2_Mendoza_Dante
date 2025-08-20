@@ -31,18 +31,19 @@ flowchart TB
     style H fill:#7f7f7f,stroke:#000,stroke-width:2px,color:#fff
 ```
 
+## 📌 Ciclo de vida del modelo
 ```mermaid
 flowchart LR
     A["Datos en MinIO"] --> B["Airflow ETL"]
     B --> C["Train/Test Split"]
     C --> D["Entrenamiento (Notebook/Script)"]
     D --> E["MLflow Tracking"]
-    E --> F["MLflow Model Registry"]
-    F --> G["FastAPI Prediction API"]
+    E --> F["MLflow registro de modelos"]
+    F --> G["FastAPI Predicción"]
     G --> H["Predicción al usuario"]
 
     %% Integración con Postgres
-    E --- I["Postgres (Metadatos MLflow)"]
+    E <---> I["Postgres (Metadatos MLflow)"]
 
     %% Estilos
     style A fill:#9467bd,stroke:#000,stroke-width:2px,color:#fff
@@ -56,26 +57,6 @@ flowchart LR
     style I fill:#7f7f7f,stroke:#000,stroke-width:2px,color:#fff
 ```
 
-
-## 📌 Ciclo de vida del modelo
-```mermaid
-flowchart LR
-    A["Datos en MinIO"] --> B["Airflow ETL"]
-    B --> C["Train/Test Split"]
-    C --> D["Notebook: Training Models"]
-    D --> E["MLflow Tracking & Model Registry"]
-    E --> F["FastAPI Prediction API"]
-    F --> G["Predicción al usuario"]
-
-    %% Estilos
-    style A fill:#9467bd,stroke:#000,stroke-width:2px,color:#fff
-    style B fill:#1f77b4,stroke:#000,stroke-width:2px,color:#fff
-    style C fill:#8c564b,stroke:#000,stroke-width:2px,color:#fff
-    style D fill:#bcbd22,stroke:#000,stroke-width:2px,color:#fff
-    style E fill:#2ca02c,stroke:#000,stroke-width:2px,color:#fff
-    style F fill:#ff7f0e,stroke:#000,stroke-width:2px,color:#fff
-    style G fill:#d62728,stroke:#000,stroke-width:2px,color:#fff
-```
 
 ## 📌 Pipeline dentro de Airflow (DAG)
 ```mermaid
