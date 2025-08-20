@@ -50,7 +50,7 @@ flowchart LR
     style A fill:#8c564b,stroke:#000,stroke-width:2px,color:#fff
     style B fill:#1f77b4,stroke:#000,stroke-width:2px,color:#fff
     style C fill:#9467bd,stroke:#000,stroke-width:2px,color:#fff
-    style D fill:#9467bd,stroke:#000,stroke-width:2px,color:#fff
+    style D fill:#2ca02c,stroke:#000,stroke-width:2px,color:#fff
     style E fill:#bcbd22,stroke:#000,stroke-width:2px,color:#fff
     style F fill:#2ca02c,stroke:#000,stroke-width:2px,color:#fff
     style G fill:#17becf,stroke:#000,stroke-width:2px,color:#fff
