@@ -61,35 +61,16 @@ flowchart LR
 ## 📌 Pipeline dentro de Airflow (DAG)
 ```mermaid
 flowchart TD
-    Start --> Ingest
-    Ingest --> Preprocess
-    Preprocess --> Train
-    Train --> Evaluate
-    Evaluate --> Register_Model
-    Register_Model --> End
-
-    %% Estilos
-    style Start fill:#1f77b4,stroke:#000,stroke-width:2px,color:#fff
-    style Ingest fill:#17becf,stroke:#000,stroke-width:2px,color:#fff
-    style Preprocess fill:#ff7f0e,stroke:#000,stroke-width:2px,color:#fff
-    style Train fill:#2ca02c,stroke:#000,stroke-width:2px,color:#fff
-    style Evaluate fill:#bcbd22,stroke:#000,stroke-width:2px,color:#fff
-    style Register_Model fill:#9467bd,stroke:#000,stroke-width:2px,color:#fff
-    style End fill:#d62728,stroke:#000,stroke-width:2px,color:#fff
-```
-
-```mermaid
-flowchart TD
     subgraph Airflow_DAG
-        Start["Start / Trigger DAG"] --> Ingest["Ingest Data"]
+        Start["Start / Trigger DAG"] --> Ingest["Ingerir datos"]
         Ingest --> Preprocess["Preprocess Data"]
         Preprocess --> Train["Train Model"]
-        Train --> Evaluate["Evaluate Model"]
+        Train --> Evaluar["Evaluar Modelo"]
 
-        Evaluate --> |if good| Register_Model["Register Model"]
-        Evaluate --> |if bad| Train
+        Evaluar --> |si es bueno| Registrar_Modelo["Register Model"]
+        Evaluar --> |si es malo| Train
 
-        Register_Model --> End["Finish / Deploy"]
+        Registrar_Modelo --> End["Finish / Deploy"]
     end
 
     %% Estilos
