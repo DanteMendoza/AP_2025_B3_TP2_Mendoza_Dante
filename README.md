@@ -16,8 +16,8 @@ flowchart TB
     C <--> H
     D --> C
     B --> E["Data Lake - Crimes Chicago"]
-    C --> F["Model Registry"]
-    D --> G["Client / App"]
+    C --> F["Registro de modelos"]
+    D --> G["Cliente / App"]
 
     %% Estilos
     style A fill:#1f77b4,stroke:#000,stroke-width:2px,color:#fff
