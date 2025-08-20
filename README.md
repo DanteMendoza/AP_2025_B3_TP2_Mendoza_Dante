@@ -34,7 +34,7 @@ flowchart TB
 ## 📌 Ciclo de vida del modelo
 ```mermaid
 flowchart LR
-    A["Datos en MinIO"] --> B["Airflow ETL"]
+    A["Datos en MinIO"] <--> B["Airflow ETL"]
     B --> C["Train/Test Split"]
     C --> D["Entrenamiento (Notebook/Script)"]
     D --> E["MLflow Tracking"]
