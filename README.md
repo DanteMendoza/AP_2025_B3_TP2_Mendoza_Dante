@@ -42,13 +42,13 @@ flowchart TB
     end
 
     %% Relaciones principales
-    A --> E["Data Lake - Crimes Chicago"]  %% Airflow consume del Data Lake
-    A --> B                                %% Airflow guarda/carga en MinIO
+    A --> E["Data Lake - Crimes Chicago"]
+    A --> B
     A --> C
     A <--> H
     C <--> H
     D --> C
-    D --> B                                %% FastAPI también accede a MinIO
+    D --> B
     C --> F["Registro de modelos"]
     D --> G["Cliente / App"]
 
