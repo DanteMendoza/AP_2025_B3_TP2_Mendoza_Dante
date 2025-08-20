@@ -34,31 +34,6 @@ flowchart TB
 ## 📌 Ciclo de vida del modelo
 ```mermaid
 flowchart LR
-    A["Datos en MinIO"] <--> B["Airflow ETL"]
-    B --> C["Train/Test Split"]
-    C --> D["Entrenamiento (Notebook/Script)"]
-    D --> E["MLflow Tracking"]
-    E --> F["MLflow registro de modelos"]
-    F --> G["FastAPI Predicción"]
-    G --> H["Predicción al usuario"]
-
-    %% Integración con Postgres
-    E <---> I["Postgres (Metadatos MLflow)"]
-
-    %% Estilos
-    style A fill:#9467bd,stroke:#000,stroke-width:2px,color:#fff
-    style B fill:#1f77b4,stroke:#000,stroke-width:2px,color:#fff
-    style C fill:#8c564b,stroke:#000,stroke-width:2px,color:#fff
-    style D fill:#bcbd22,stroke:#000,stroke-width:2px,color:#fff
-    style E fill:#2ca02c,stroke:#000,stroke-width:2px,color:#fff
-    style F fill:#17becf,stroke:#000,stroke-width:2px,color:#fff
-    style G fill:#ff7f0e,stroke:#000,stroke-width:2px,color:#fff
-    style H fill:#d62728,stroke:#000,stroke-width:2px,color:#fff
-    style I fill:#7f7f7f,stroke:#000,stroke-width:2px,color:#fff
-```
-
-```mermaid
-flowchart LR
     A["Data Lake - Crimes Chicago"] --> B["Airflow ETL"]
     B <--> C["MinIO (Almacenamiento)"]
     C --> D["Train/Test Split"]
@@ -75,7 +50,7 @@ flowchart LR
     style A fill:#8c564b,stroke:#000,stroke-width:2px,color:#fff
     style B fill:#1f77b4,stroke:#000,stroke-width:2px,color:#fff
     style C fill:#9467bd,stroke:#000,stroke-width:2px,color:#fff
-    style D fill:#bcbd22,stroke:#000,stroke-width:2px,color:#fff
+    style D fill:#9467bd,stroke:#000,stroke-width:2px,color:#fff
     style E fill:#bcbd22,stroke:#000,stroke-width:2px,color:#fff
     style F fill:#2ca02c,stroke:#000,stroke-width:2px,color:#fff
     style G fill:#17becf,stroke:#000,stroke-width:2px,color:#fff
