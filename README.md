@@ -12,8 +12,8 @@ flowchart TB
 
     A --> B
     A --> C
-    A --> H
-    C --> H
+    A <--> H
+    C <--> H
     D --> C
     B --> E["Data Lake - Crimes Chicago"]
     C --> F["Model Registry"]
