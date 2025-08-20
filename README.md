@@ -57,6 +57,32 @@ flowchart LR
     style I fill:#7f7f7f,stroke:#000,stroke-width:2px,color:#fff
 ```
 
+```mermaid
+flowchart LR
+    A["Data Lake - Crimes Chicago"] --> B["Airflow ETL"]
+    B <--> C["MinIO (Almacenamiento)"]
+    C --> D["Train/Test Split"]
+    D --> E["Entrenamiento (Notebook/Script)"]
+    E --> F["MLflow Tracking"]
+    F --> G["MLflow Registro de Modelos"]
+    G --> H["FastAPI Predicción"]
+    H --> I["Predicción al usuario"]
+
+    %% Integración con Postgres
+    F <---> J["Postgres (Metadatos MLflow)"]
+
+    %% Estilos
+    style A fill:#8c564b,stroke:#000,stroke-width:2px,color:#fff
+    style B fill:#1f77b4,stroke:#000,stroke-width:2px,color:#fff
+    style C fill:#9467bd,stroke:#000,stroke-width:2px,color:#fff
+    style D fill:#bcbd22,stroke:#000,stroke-width:2px,color:#fff
+    style E fill:#bcbd22,stroke:#000,stroke-width:2px,color:#fff
+    style F fill:#2ca02c,stroke:#000,stroke-width:2px,color:#fff
+    style G fill:#17becf,stroke:#000,stroke-width:2px,color:#fff
+    style H fill:#ff7f0e,stroke:#000,stroke-width:2px,color:#fff
+    style I fill:#d62728,stroke:#000,stroke-width:2px,color:#fff
+    style J fill:#7f7f7f,stroke:#000,stroke-width:2px,color:#fff
+```
 
 ## 📌 Pipeline dentro de Airflow (DAG)
 ```mermaid
