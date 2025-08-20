@@ -61,30 +61,6 @@ flowchart LR
 ## 📌 Pipeline dentro de Airflow (DAG)
 ```mermaid
 flowchart TD
-    subgraph Airflow_DAG
-        Start["Start / Trigger DAG"] --> Ingest["Ingest Data"]
-        Ingest --> Preprocess["Preprocess Data"]
-        Preprocess --> Train["Train Model"]
-        Train --> Evaluate["Evaluate Model"]
-
-        Evaluate --> |si es bueno| Register_Model["Register Model"]
-        Evaluate --> |si es malo| Train
-
-        Register_Model --> End["Finish / Deploy"]
-    end
-
-    %% Estilos
-    style Start fill:#1f77b4,stroke:#000,stroke-width:2px,color:#fff
-    style Ingest fill:#17becf,stroke:#000,stroke-width:2px,color:#fff
-    style Preprocess fill:#ff7f0e,stroke:#000,stroke-width:2px,color:#fff
-    style Train fill:#2ca02c,stroke:#000,stroke-width:2px,color:#fff
-    style Evaluate fill:#bcbd22,stroke:#000,stroke-width:2px,color:#fff
-    style Register_Model fill:#9467bd,stroke:#000,stroke-width:2px,color:#fff
-    style End fill:#d62728,stroke:#000,stroke-width:2px,color:#fff
-```
-
-```mermaid
-flowchart TD
     %% --- DAG de Airflow ---
     subgraph Airflow_DAG["Airflow DAG"]
         Start["Start / Trigger DAG"] --> Ingest["Ingest Data"]
@@ -92,7 +68,7 @@ flowchart TD
     end
 
     %% --- Proceso en Notebooks ---
-    subgraph Notebooks["Notebooks de Entrenamiento"]
+    subgraph Notebooks["Notebooks"]
         Preprocess --> Train["Train Model"]
         Train --> Evaluate["Evaluate Model"]
 
