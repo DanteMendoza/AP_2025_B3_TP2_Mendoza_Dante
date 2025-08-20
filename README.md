@@ -67,7 +67,10 @@ flowchart TB
     style E fill:#8c564b,stroke:#000,stroke-width:2px,color:#fff
     style F fill:#17becf,stroke:#000,stroke-width:2px,color:#fff
     style G fill:#d62728,stroke:#000,stroke-width:2px,color:#fff
+```
 
+## 📌 Ciclo de vida del modelo
+```mermaid
 flowchart LR
     A["Datos en MinIO"] --> B["Airflow ETL"]
     B --> C["Train/Test Split"]
@@ -84,7 +87,10 @@ flowchart LR
     style E fill:#2ca02c,stroke:#000,stroke-width:2px,color:#fff
     style F fill:#ff7f0e,stroke:#000,stroke-width:2px,color:#fff
     style G fill:#d62728,stroke:#000,stroke-width:2px,color:#fff
+```
 
+## 📌 Pipeline dentro de Airflow (DAG)
+```mermaid
 flowchart TD
     Start --> Ingest
     Ingest --> Preprocess
@@ -101,7 +107,6 @@ flowchart TD
     style Evaluate fill:#bcbd22,stroke:#000,stroke-width:2px,color:#fff
     style Register_Model fill:#9467bd,stroke:#000,stroke-width:2px,color:#fff
     style End fill:#d62728,stroke:#000,stroke-width:2px,color:#fff
-
 ```
 
 
