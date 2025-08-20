@@ -62,15 +62,15 @@ flowchart LR
 ```mermaid
 flowchart TD
     subgraph Airflow_DAG
-        Start["Start / Trigger DAG"] --> Ingest["Ingerir datos"]
+        Start["Start / Trigger DAG"] --> Ingest["Ingest Data"]
         Ingest --> Preprocess["Preprocess Data"]
         Preprocess --> Train["Train Model"]
-        Train --> Evaluar["Evaluar Modelo"]
+        Train --> Evaluate["Evaluate Model"]
 
-        Evaluar --> |si es bueno| Registrar_Modelo["Register Model"]
-        Evaluar --> |si es malo| Train
+        Evaluate --> |if good| Register_Model["Register Model"]
+        Evaluate --> |if bad| Train
 
-        Registrar_Modelo --> End["Finish / Deploy"]
+        Register_Model --> End["Finish / Deploy"]
     end
 
     %% Estilos
