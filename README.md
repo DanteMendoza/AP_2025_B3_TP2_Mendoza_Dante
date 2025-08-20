@@ -67,8 +67,8 @@ flowchart TD
         Preprocess --> Train["Train Model"]
         Train --> Evaluate["Evaluate Model"]
 
-        Evaluate --> |if good| Register_Model["Register Model"]
-        Evaluate --> |if bad| Train
+        Evaluate --> |si es bueno| Register_Model["Register Model"]
+        Evaluate --> |si es malo| Train
 
         Register_Model --> End["Finish / Deploy"]
     end
